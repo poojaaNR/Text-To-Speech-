@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="eng">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="x-UA-Compatible" content="" TE=edge">
+    <meta name="viewport" content="width=device-width,initial-s">
+    <title> text to speech converter</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <section>
+        <h3>Convert Text To Speech</h3>
+        <input type="text" placeholder="write something here">
+        <span>
+            speak
+        </span>
+    </section>
+    <script>
+        let btn = document.querySelector("span");
+        btn.onclick = () => {
+            let txt = document.querySelector("input").value;
+            let speech = new SpeechSynthesisUtterance();
+            speech.lang = "en-US";
+            speech.text = txt;
+            speech.rate = 1;
+            speech.volume = 1;
+            speech.pitch = 1;
+
+            speechSynthesis.speak(speech);
+
+        }
+    </script>
+</body>
+
+</html>
